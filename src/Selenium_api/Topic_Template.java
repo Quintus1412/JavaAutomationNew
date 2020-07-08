@@ -42,8 +42,7 @@ public class Topic_Template {
 		 
 	  }	
 	 
-	 
-  
+	  
 	 
 	@Test
 	 public void TC_01_CheckTitle() {
@@ -59,8 +58,33 @@ public class Topic_Template {
 	 
 	@Test
 	  public void TC_02_CheckURL() {
+		// check URL cua page
 		 String homePageURL = driver.getCurrentUrl();
 		 Assert.assertEquals("http://live.demoguru99.com/", homePageURL);
+	  }
+	
+	
+	  @AfterClass
+	  public void afterClass() {
+		  //quit browser
+		  driver.quit();
+	  }
+
+
+
+	
+	@Test
+	 public void TC_01_CheckTitle() {
+		 
+	
+	
+	  }
+	
+	
+	
+	@Test
+	  public void TC_02_CheckURL() {
+		 
 	  }
 	
 	  @AfterClass
