@@ -40,6 +40,8 @@ public class Topic_01_Check_Evironment {
 	  }	
 	 
 	 // Change code laptop A
+	
+	 
 		@Test
 		 public void TC_01_CheckTitle() {
 			 //lay title cua page
