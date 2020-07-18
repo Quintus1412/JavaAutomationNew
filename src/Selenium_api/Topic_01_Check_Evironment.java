@@ -39,7 +39,7 @@ public class Topic_01_Check_Evironment {
 		 
 	  }	
 	 
-	 // Change code laptop A
+	
 	
 	 
 		@Test
@@ -52,7 +52,7 @@ public class Topic_01_Check_Evironment {
 		  
 		  }
 	 
-	  
+		 
 		 
 		@Test
 		  public void TC_02_CheckURL() {
