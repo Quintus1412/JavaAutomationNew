@@ -20,6 +20,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
@@ -39,7 +40,10 @@ public class Topic_15_WebDriver_Wait5_Explicit {
 		 System.setProperty("webdriver.chrome.driver", ".\\Drivers\\chromedriver.exe");
 		 driver = new ChromeDriver();
 		 waitExplicit = new WebDriverWait(driver, 12);
+		 fluentWait = new FluentWait<WebDriver>(driver);
 	//implicitWait = new WebDriverWait(driver, 10);
+		 
+
 		//
 		// khoi tao IE
 		// System.setProperty("webdriver.ie.driver", ".\\Drivers\\IEDriverServer.exe")
@@ -54,33 +58,6 @@ public class Topic_15_WebDriver_Wait5_Explicit {
 
 	
 	
-	 public void TC_01_Element_Found() {
-		// Implicit Wait 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit. SECONDS);
-		
-		// Explicit Wait 
-		waitExplicit = new WebDriverWait(driver, 5);
-		
-		driver.get("https://www.facebook.com/");
-		
-		System.out.println(" ------- STEP 01 - Start TC_01_Element_Found: " + new Date() + " ---------");
-		try {
-			WebElement emailTextbox = driver.findElement(By.xpath("//input[@id='email']"));
-			Assert.assertTrue (emailTextbox.isDisplayed()); 
-		} catch (Exception ex) {
-			System.out.println("Switch to catch exception!");
-		}
-		
-		System.out.println(" --- STEP 01 - End TC_01_Element_Found: " + new Date() + " ------ ");
-		
-		System.out.println(" .. ... STEP 02 - Start TC_01_Element_Found: " + new Date() + "");
-		try { waitExplicit.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@name='lastname']")));
-		
-		} catch (Exception ex) {
-			System.out.println("Switch to catch exception!");
-		}
-		System.out.println(" --------- STEP 02 - End TC_01_Element_Found: " + new Date() + " -------");
-	}
 	 
 	@Test public void TC_02_Element_NotFound_TimeOut() {
 		// Implicit Wait 
